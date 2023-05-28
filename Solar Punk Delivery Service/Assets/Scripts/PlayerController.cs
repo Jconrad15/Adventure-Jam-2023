@@ -3,9 +3,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    private enum PreviousAction { Move, Talk };
+
     private bool isMoving = false;
     [SerializeField]
     private float speed = 10f;
+    
+    private PreviousAction previousAction;
 
     private void Update()
     {
@@ -17,21 +21,43 @@ public class PlayerController : MonoBehaviour
         // Don't get new input if currently moving
         if (isMoving) { return; }
 
+        bool moved = false;
         if (Input.GetKeyDown(KeyCode.W))
         {
-            TryMove(Direction.North);
+            if (TryMove(Direction.North))
+            {
+                moved = true;
+            }
         }
         else if (Input.GetKeyDown(KeyCode.S))
         {
-            TryMove(Direction.South);
+            if (TryMove(Direction.South))
+            {
+                moved = true;
+            }
         }
         else if (Input.GetKeyDown(KeyCode.D))
         {
-            TryMove(Direction.East);
+            if (TryMove(Direction.East))
+            {
+                moved = true;
+            }
         }
         else if (Input.GetKeyDown(KeyCode.A))
         {
-            TryMove(Direction.West);
+            if (TryMove(Direction.West))
+            {
+                moved = true;
+            }
+        }
+
+        if (moved)
+        {
+            if (previousAction == PreviousAction.Talk)
+            {
+                FindObjectOfType<TextDisplayer>().HideText();
+            }
+            previousAction = PreviousAction.Move;
         }
     }
 
@@ -47,6 +73,13 @@ public class PlayerController : MonoBehaviour
             {
                 return false;
             }
+            else if (hitCollider.CompareTag("NPC"))
+            {
+                hitCollider.gameObject.GetComponent<NPC>().Talk();
+                previousAction = PreviousAction.Talk;
+                return false;
+            }
+
         }
 
         return true;

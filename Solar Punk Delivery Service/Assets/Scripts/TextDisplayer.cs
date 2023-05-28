@@ -12,6 +12,7 @@ public class TextDisplayer : MonoBehaviour
     [SerializeField]
     private float delay = 0.05f;
 
+    [SerializeField]
     private string testText = "Hello, this is some text!";
 
     private void Start()
@@ -26,6 +27,11 @@ public class TextDisplayer : MonoBehaviour
         {
             ShowText(testText);
         }
+    }
+
+    public void HideText()
+    {
+        textBox.SetActive(false);
     }
 
     public void ShowText(string text)
