@@ -1,8 +1,12 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    private Action<Vector2> cbOnPlayerFinishMove;
+    private Action<Vector2> cbOnPlayerStartMove;
+
     private enum PreviousAction { Move, Talk };
 
     private bool isMoving = false;
@@ -90,6 +94,7 @@ public class PlayerController : MonoBehaviour
         if (IsLocationOpen(d) == false) { return false; }
 
         Vector3 targetPos = GetNeighborPosition(d, transform.position);
+        cbOnPlayerStartMove?.Invoke(targetPos);
 
         StartCoroutine(LerpMove(targetPos));
         return true;
@@ -110,6 +115,7 @@ public class PlayerController : MonoBehaviour
         }
 
         transform.position = targetPos;
+        cbOnPlayerFinishMove?.Invoke(transform.position);
         isMoving = false;
     }
 
@@ -138,4 +144,23 @@ public class PlayerController : MonoBehaviour
         return startingPos;
     }
 
+    public void RegisterOnPlayerFinishMove(Action<Vector2> callbackfunc)
+    {
+        cbOnPlayerFinishMove += callbackfunc;
+    }
+
+    public void UnregisterOnPlayerFinishMove(Action<Vector2> callbackfunc)
+    {
+        cbOnPlayerFinishMove -= callbackfunc;
+    }
+
+    public void RegisterOnPlayerStartMove(Action<Vector2> callbackfunc)
+    {
+        cbOnPlayerStartMove += callbackfunc;
+    }
+
+    public void UnregisterOnPlayerStartMove(Action<Vector2> callbackfunc)
+    {
+        cbOnPlayerStartMove -= callbackfunc;
+    }
 }
