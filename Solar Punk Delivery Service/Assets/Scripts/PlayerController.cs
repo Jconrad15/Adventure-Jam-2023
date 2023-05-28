@@ -1,9 +1,11 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    private bool isMoving = false;
+    [SerializeField]
+    private float speed = 10f;
 
     private void Update()
     {
@@ -12,6 +14,9 @@ public class PlayerController : MonoBehaviour
 
     private void GetPlayerInput()
     {
+        // Don't get new input if currently moving
+        if (isMoving) { return; }
+
         if (Input.GetKeyDown(KeyCode.W))
         {
             TryMove(Direction.North);
@@ -47,12 +52,32 @@ public class PlayerController : MonoBehaviour
         return true;
     }
 
-    private void TryMove(Direction d)
+    private bool TryMove(Direction d)
     {
-        if (IsLocationOpen(d) == false) { return; }
+        if (IsLocationOpen(d) == false) { return false; }
 
         Vector3 targetPos = GetNeighborPosition(d, transform.position);
+
+        StartCoroutine(LerpMove(targetPos));
+        return true;
+    }
+
+    private IEnumerator LerpMove(Vector2 targetPos)
+    {
+        Vector2 startPos = transform.position;
+        isMoving = true;
+        float timer = 0f;
+
+        while (timer <= 1f)
+        {
+            transform.position = Vector2.Lerp(
+                startPos, targetPos, timer);
+            timer += Time.deltaTime * speed;
+            yield return new WaitForEndOfFrame();
+        }
+
         transform.position = targetPos;
+        isMoving = false;
     }
 
     private static Vector2 GetNeighborPosition(
