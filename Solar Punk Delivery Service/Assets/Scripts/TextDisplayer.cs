@@ -2,31 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+using UnityEngine.UI;
 public class TextDisplayer : MonoBehaviour
 {
     [SerializeField]
     private GameObject textBox;
     [SerializeField]
     private TextMeshProUGUI textArea;
-    [SerializeField]
-    private float delay = 0.05f;
 
     [SerializeField]
-    private string testText = "Hello, this is some text!";
+    private Image npcCloseUpImage;
+
+    [SerializeField]
+    private Image playerCloseUpImage;
+    [SerializeField]
+    private Sprite playerCloseUpSprite;
+
+    [SerializeField]
+    private float delay = 0.05f;
 
     private void Start()
     {
         textBox.SetActive(false);
-    }
-
-    // For testing
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            ShowText(testText);
-        }
+        playerCloseUpImage.sprite = playerCloseUpSprite;
     }
 
     public void HideText()
@@ -34,17 +32,18 @@ public class TextDisplayer : MonoBehaviour
         textBox.SetActive(false);
     }
 
-    public void ShowText(string text)
+    public void ShowDialogue(string text, Sprite npc)
     {
         textBox.SetActive(true);
-
+        npcCloseUpImage.sprite = npc;
+        
         // Need to parse text into characters
         char[] characters = text.ToCharArray();
         // Add characters one at a time
-        StartCoroutine(ShowCharacters(characters));
+        _ = StartCoroutine(ShowChars(characters));
     }
 
-    private IEnumerator ShowCharacters(char[] characters)
+    private IEnumerator ShowChars(char[] characters)
     {
         string text = null;
         for (int i = 0; i < characters.Length; i++)

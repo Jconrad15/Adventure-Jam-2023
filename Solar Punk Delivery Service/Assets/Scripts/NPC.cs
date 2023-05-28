@@ -8,7 +8,7 @@ public class NPC : MonoBehaviour
     private Dialogue dialogue;
     [SerializeField]
     private Sprite closeUpImage;
-    [SerializeField] 
+    [SerializeField]
     private Sprite topDownImage;
     [SerializeField]
     private string characterName;
@@ -17,8 +17,10 @@ public class NPC : MonoBehaviour
 
     public void Talk()
     {
+        string text = dialogue.GetNextText();
+
         FindObjectOfType<TextDisplayer>()
-            .ShowText(dialogue.GetNextText());
+            .ShowDialogue(text, closeUpImage);
     }
 
 }
