@@ -11,6 +11,11 @@ public class TextDisplayer : MonoBehaviour
     private TextMeshProUGUI textArea;
 
     [SerializeField]
+    private TextMeshProUGUI npcNameArea;
+    [SerializeField]
+    private Image npcNameImage;
+
+    [SerializeField]
     private Image npcCloseUpImage;
 
     [SerializeField]
@@ -32,15 +37,24 @@ public class TextDisplayer : MonoBehaviour
         textBox.SetActive(false);
     }
 
-    public void ShowDialogue(string text, Sprite npc)
+    public void ShowDialogue(string text, NPC npc)
     {
         textBox.SetActive(true);
-        npcCloseUpImage.sprite = npc;
-        
+        npcCloseUpImage.sprite = npc.GetCloseUpImage();
+        SetNameArea(npc);
+
         // Need to parse text into characters
         char[] characters = text.ToCharArray();
         // Add characters one at a time
         _ = StartCoroutine(ShowChars(characters));
+    }
+
+    private void SetNameArea(NPC npc)
+    {
+        string npcName = npc.GetCharacterName();
+        npcNameArea.SetText(npcName);
+
+        npcNameImage.color = npc.GetColor();
     }
 
     private IEnumerator ShowChars(char[] characters)

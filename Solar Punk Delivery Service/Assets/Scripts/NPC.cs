@@ -9,6 +9,8 @@ public class NPC : MonoBehaviour
     [SerializeField]
     private Dialogue dialogue;
     [SerializeField]
+    private Color color;
+    [SerializeField]
     private Sprite closeUpImage;
     [SerializeField]
     private Sprite topDownImage;
@@ -23,7 +25,21 @@ public class NPC : MonoBehaviour
         string text = dialogue.GetNextText();
 
         FindObjectOfType<TextDisplayer>()
-            .ShowDialogue(text, closeUpImage);
+            .ShowDialogue(text, this);
     }
 
+    public Sprite GetCloseUpImage()
+    {
+        return closeUpImage;
+    }
+
+    public string GetCharacterName()
+    {
+        return characterName;
+    }
+
+    public Color GetColor()
+    {
+        return color;
+    }
 }
