@@ -7,8 +7,7 @@ using UnityEngine;
 /// </summary>
 public class Inventory : MonoBehaviour
 {
-    private List<Ingredient> ingredients;
-    private List<Potion> potions;
+
 
     public static Inventory Instance { get; private set; }
     private void Awake()
@@ -24,11 +23,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        ingredients = new List<Ingredient>();
-        potions = new List<Potion>();
-    }
+
 
 
 
