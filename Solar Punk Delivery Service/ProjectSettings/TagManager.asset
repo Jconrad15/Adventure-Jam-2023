@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Colliders
   - NPC
+  - Collectable
   layers:
   - Default
   - TransparentFX
@@ -13,7 +14,7 @@ TagManager:
   - Characters
   - Water
   - UI
-  - 
+  - Ingredients
   - 
   - 
   - 
@@ -42,6 +43,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ingredients
+    uniqueID: 571897221
     locked: 0
   - name: Characters
     uniqueID: 911921755

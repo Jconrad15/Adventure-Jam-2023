@@ -15,6 +15,9 @@ public class NPC : MonoBehaviour
     [SerializeField]
     private AudioClip voice;
 
+    [SerializeField]
+    private Potion requestedPotion;
+
     public void Talk()
     {
         string text = dialogue.GetNextText();
