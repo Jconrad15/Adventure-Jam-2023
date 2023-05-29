@@ -1,14 +1,13 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
 public class Dialogue
 {
+    [TextArea(3, 10)]
     public string[] text;
 
-    public int current = 0;
+    private int current = 0;
 
     public string GetNextText()
     {
@@ -18,7 +17,4 @@ public class Dialogue
         current++;
         return nextText;
     }
-
-
-
 }
