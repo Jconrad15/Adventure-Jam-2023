@@ -12,4 +12,16 @@ public class Collectable : MonoBehaviour
         GetComponent<SpriteRenderer>().sprite = ingredient.image;
     }
 
+    public void Collect()
+    {
+        Inventory.Instance.GetIngredient(ingredient);
+        StartCoroutine(DelayedDestroy());
+    }
+
+    private IEnumerator DelayedDestroy()
+    {
+        yield return new WaitForEndOfFrame();
+        Destroy(gameObject);
+    }
+
 }

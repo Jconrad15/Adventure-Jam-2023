@@ -6,6 +6,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class Potion : ScriptableObject
 {
+    public int id;
     public string potionName;
     public string description;
     public Ingredient[] neededIngredients;

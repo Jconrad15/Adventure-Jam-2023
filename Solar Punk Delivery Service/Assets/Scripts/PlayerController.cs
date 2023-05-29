@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     private Action<Vector2> cbOnPlayerFinishMove;
     private Action<Vector2> cbOnPlayerStartMove;
 
-    private enum PreviousAction { Move, Talk };
+    private enum PreviousAction { Move, Talk, Collect };
 
     private bool isMoving = false;
     [SerializeField]
@@ -70,7 +70,8 @@ public class PlayerController : MonoBehaviour
         Vector3 targetPos = GetNeighborPosition(d, transform.position);
 
         // Check for collision with a collider object at target position
-        Collider2D[] hitColliders = Physics2D.OverlapBoxAll(targetPos, new Vector2(0.1f, 0.1f),0);
+        Collider2D[] hitColliders = Physics2D.OverlapBoxAll(
+            targetPos, new Vector2(0.1f, 0.1f), 0);
         foreach (Collider2D hitCollider in hitColliders)
         {
             if (hitCollider.CompareTag("Colliders"))
@@ -83,7 +84,12 @@ public class PlayerController : MonoBehaviour
                 previousAction = PreviousAction.Talk;
                 return false;
             }
-
+            else if (hitCollider.CompareTag("Collectable"))
+            {
+                hitCollider.gameObject.GetComponent<Collectable>().Collect();
+                previousAction = PreviousAction.Collect;
+                return false;
+            }
         }
 
         return true;
