@@ -3330,7 +3330,7 @@ GameObject:
   - component: {fileID: 1428119297}
   - component: {fileID: 1428119299}
   m_Layer: 6
-  m_Name: TestIngredient
+  m_Name: Test Collectable Ingredient
   m_TagString: Collectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
