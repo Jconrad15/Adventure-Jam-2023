@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c555181a2279fe46a4a5fea4e3f0e17, type: 3}
-  m_Name: Potion 2
+  m_Name: Potion 3
   m_EditorClassIdentifier: 
-  id: 1
+  id: 2
   potionName: potion name
   description: potion description
   neededIngredients:
   - {fileID: 11400000, guid: dbae5ece71c68b942bf6458c7eb105ea, type: 2}
   - {fileID: 11400000, guid: 08632209e0fb4274599531e2516f62d6, type: 2}
-  image: {fileID: 21300000, guid: b0ad4d7daf309e64f993828e24b019f6, type: 3}
+  - {fileID: 11400000, guid: 394f8b96ce1f83440871b9b8cf72c907, type: 2}
+  image: {fileID: 21300000, guid: 16faac19fd1357847aa939d0c4ed82ca, type: 3}

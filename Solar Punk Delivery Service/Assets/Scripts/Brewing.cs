@@ -20,7 +20,7 @@ public class Brewing : MonoBehaviour
 
         if (Inventory.Instance.TryBrewPotion(potions[potionID]))
         {
-            Debug.Log("Brewed");
+            Debug.Log("Brewed id " + potionID);
         }
         else
         {

@@ -22,13 +22,9 @@ public class Inventory : MonoBehaviour
     [SerializeField]
     private GameObject ingredient4GO;
 
-    private Potion potion1;
-    private Potion potion2;
-
+    private Potion[] potions;
     [SerializeField]
-    private GameObject potion1GO;
-    [SerializeField]
-    private GameObject potion2GO;
+    private GameObject[] potionGOs;
 
     public static Inventory Instance { get; private set; }
     private void Awake()
@@ -51,8 +47,11 @@ public class Inventory : MonoBehaviour
         ingredient3GO.SetActive(false);
         ingredient4GO.SetActive(false);
 
-        potion1GO.SetActive(false);
-        potion2GO.SetActive(false);
+        potions = new Potion[potionGOs.Length];
+        for (int i = 0; i < potionGOs.Length; i++)
+        {
+            potionGOs[i].SetActive(false);
+        }
     }
 
     // Note, this is bad coding practice.
@@ -94,18 +93,15 @@ public class Inventory : MonoBehaviour
             UseIngredient(potion.neededIngredients[i].id);
         }
 
-        if (potion.id == 1)
-        {
-            potion1 = potion;
-            potion1GO.SetActive(true);
-        }
-        else if (potion.id == 2)
-        {
-            potion2 = potion;
-            potion2GO.SetActive(true);
-        }
-
+        potions[potion.id] = potion;
+        potionGOs[potion.id].SetActive(true);
         return true;
+    }
+
+    public bool TryGivePotion(Potion potion)
+    {
+        // TODO
+        return false;
     }
 
     private bool CheckIfIngredientsAvailable(Potion potion)
@@ -134,7 +130,7 @@ public class Inventory : MonoBehaviour
         return true;
     }
 
-    public void UseIngredient(int ingredientID)
+    private void UseIngredient(int ingredientID)
     {
         if (ingredientID == 1)
         {
@@ -158,18 +154,9 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void UsePotion(int potionID)
+    private void UsePotion(int potionID)
     {
-        if (potionID == 1)
-        {
-            potion1 = null;
-            potion1GO.SetActive(false);
-        }
-        else if (potionID == 2)
-        {
-            potion2 = null;
-            potion2GO.SetActive(false);
-        }
-
+        potions[potionID] = null;
+        potionGOs[potionID].SetActive(false);
     }
 }

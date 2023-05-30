@@ -9,10 +9,14 @@ public class CookingTabs : MonoBehaviour
     [SerializeField]
     private Canvas[] potionDescriptions;
 
+    private BrewImageUI brewImageUI;
+
     public int ShownPotionID { get; private set; }
 
     private void Start()
     {
+        brewImageUI = GetComponent<BrewImageUI>();
+
         ShownPotionID = 0;
         SortUI(ShownPotionID);
     }
@@ -51,6 +55,8 @@ public class CookingTabs : MonoBehaviour
     {
         EditSortingOrder(topTabIndex, tabs);
         EditSortingOrder(topTabIndex, potionDescriptions);
+
+        brewImageUI.SetBrewImage(topTabIndex);
     }
 
     private void EditSortingOrder(int topTabIndex, Canvas[] canvases)
