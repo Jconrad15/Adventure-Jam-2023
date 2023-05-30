@@ -8,19 +8,10 @@ using UnityEngine.TextCore.Text;
 /// </summary>
 public class Inventory : MonoBehaviour
 {
-    private Ingredient ingredient1;
-    private Ingredient ingredient2;
-    private Ingredient ingredient3;
-    private Ingredient ingredient4;
+    private Ingredient[] ingredients;
 
     [SerializeField]
-    private GameObject ingredient1GO;
-    [SerializeField]
-    private GameObject ingredient2GO;
-    [SerializeField]
-    private GameObject ingredient3GO;
-    [SerializeField]
-    private GameObject ingredient4GO;
+    private GameObject[] ingredientGOs;
 
     private Potion[] potions;
     [SerializeField]
@@ -42,43 +33,23 @@ public class Inventory : MonoBehaviour
 
     private void Start()
     {
-        ingredient1GO.SetActive(false);
-        ingredient2GO.SetActive(false);
-        ingredient3GO.SetActive(false);
-        ingredient4GO.SetActive(false);
-
         potions = new Potion[potionGOs.Length];
         for (int i = 0; i < potionGOs.Length; i++)
         {
             potionGOs[i].SetActive(false);
         }
+
+        ingredients = new Ingredient[ingredientGOs.Length];
+        for (int i = 0; i < ingredientGOs.Length; i++)
+        {
+            ingredientGOs[i].SetActive(false);
+        }
     }
 
-    // Note, this is bad coding practice.
-    // There is probably a better way than lising out if statements for numbers,
-    // but this is easy and fast for prototyping
     public void ObtainIngredient(Ingredient ingredient)
     {
-        if (ingredient.id == 1)
-        {
-            ingredient1 = ingredient;
-            ingredient1GO.SetActive(true);
-        }
-        else if (ingredient.id == 2)
-        {
-            ingredient2 = ingredient;
-            ingredient2GO.SetActive(true);
-        }
-        else if (ingredient.id == 3)
-        {
-            ingredient3 = ingredient;
-            ingredient3GO.SetActive(true);
-        }
-        else if (ingredient.id == 4)
-        {
-            ingredient4 = ingredient;
-            ingredient4GO.SetActive(true);
-        }
+        ingredients[ingredient.id] = ingredient;
+        ingredientGOs[ingredient.id].SetActive(true);
     }
 
     public bool TryBrewPotion(Potion potion)
@@ -109,19 +80,19 @@ public class Inventory : MonoBehaviour
         for (int i = 0; i < potion.neededIngredients.Length; i++)
         {
             Ingredient ingredient = potion.neededIngredients[i];
-            if (ingredient.id == 1 && ingredient1 == null)
+            if (ingredient.id == 0 && ingredients[ingredient.id] == null)
             {
                 return false;
             }
-            if (ingredient.id == 2 && ingredient2 == null)
+            if (ingredient.id == 1 && ingredients[ingredient.id] == null)
             {
                 return false;
             }
-            if (ingredient.id == 3 && ingredient3 == null)
+            if (ingredient.id == 2 && ingredients[ingredient.id] == null)
             {
                 return false;
             }
-            if (ingredient.id == 4 && ingredient4 == null)
+            if (ingredient.id == 3 && ingredients[ingredient.id] == null)
             {
                 return false;
             }
@@ -132,26 +103,8 @@ public class Inventory : MonoBehaviour
 
     private void UseIngredient(int ingredientID)
     {
-        if (ingredientID == 1)
-        {
-            ingredient1 = null;
-            ingredient1GO.SetActive(false);
-        }
-        else if (ingredientID == 2)
-        {
-            ingredient2 = null;
-            ingredient2GO.SetActive(false);
-        }
-        else if (ingredientID == 3)
-        {
-            ingredient3 = null;
-            ingredient3GO.SetActive(false);
-        }
-        else if (ingredientID == 4)
-        {
-            ingredient4 = null;
-            ingredient4GO.SetActive(false);
-        }
+        ingredients[ingredientID] = null;
+        ingredientGOs[ingredientID].SetActive(false);
     }
 
     private void UsePotion(int potionID)
