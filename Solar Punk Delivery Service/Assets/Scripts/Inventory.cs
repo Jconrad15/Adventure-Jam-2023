@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 /// <summary>
 /// Singleton for the player's inventory
@@ -57,7 +58,7 @@ public class Inventory : MonoBehaviour
     // Note, this is bad coding practice.
     // There is probably a better way than lising out if statements for numbers,
     // but this is easy and fast for prototyping
-    public void GetIngredient(Ingredient ingredient)
+    public void ObtainIngredient(Ingredient ingredient)
     {
         if (ingredient.id == 1)
         {
@@ -81,8 +82,18 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void GetPotion(Potion potion)
+    public bool TryBrewPotion(Potion potion)
     {
+        if (CheckIfIngredientsAvailable(potion) == false)
+        {
+            return false;
+        }
+
+        for (int i = 0; i < potion.neededIngredients.Length; i++)
+        {
+            UseIngredient(potion.neededIngredients[i].id);
+        }
+
         if (potion.id == 1)
         {
             potion1 = potion;
@@ -94,6 +105,33 @@ public class Inventory : MonoBehaviour
             potion2GO.SetActive(true);
         }
 
+        return true;
+    }
+
+    private bool CheckIfIngredientsAvailable(Potion potion)
+    {
+        for (int i = 0; i < potion.neededIngredients.Length; i++)
+        {
+            Ingredient ingredient = potion.neededIngredients[i];
+            if (ingredient.id == 1 && ingredient1 == null)
+            {
+                return false;
+            }
+            if (ingredient.id == 2 && ingredient2 == null)
+            {
+                return false;
+            }
+            if (ingredient.id == 3 && ingredient3 == null)
+            {
+                return false;
+            }
+            if (ingredient.id == 4 && ingredient4 == null)
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     public void UseIngredient(int ingredientID)

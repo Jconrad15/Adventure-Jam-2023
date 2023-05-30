@@ -14,7 +14,7 @@ public class Collectable : MonoBehaviour
 
     public void Collect()
     {
-        Inventory.Instance.GetIngredient(ingredient);
+        Inventory.Instance.ObtainIngredient(ingredient);
         StartCoroutine(DelayedDestroy());
     }
 
