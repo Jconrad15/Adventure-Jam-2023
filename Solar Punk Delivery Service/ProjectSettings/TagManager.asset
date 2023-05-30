@@ -7,6 +7,7 @@ TagManager:
   - Colliders
   - NPC
   - Collectable
+  - PotionTable
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - Water
   - UI
   - Ingredients
-  - 
+  - WorldObjects
   - 
   - 
   - 
@@ -49,4 +50,7 @@ TagManager:
     locked: 0
   - name: Characters
     uniqueID: 911921755
+    locked: 0
+  - name: WorldObjects
+    uniqueID: 3299751325
     locked: 0

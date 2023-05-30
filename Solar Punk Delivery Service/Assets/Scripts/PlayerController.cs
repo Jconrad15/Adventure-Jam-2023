@@ -7,7 +7,9 @@ public class PlayerController : MonoBehaviour
     private Action<Vector2> cbOnPlayerFinishMove;
     private Action<Vector2> cbOnPlayerStartMove;
 
-    private enum PreviousAction { Move, Talk, Collect };
+    private enum PreviousAction { Move, Talk, Collect, CreatePotion };
+
+    private bool movingEnabled = true;
 
     private bool isMoving = false;
     [SerializeField]
@@ -22,6 +24,8 @@ public class PlayerController : MonoBehaviour
 
     private void GetPlayerInput()
     {
+        if (movingEnabled == false) { return; }
+        
         // Don't get new input if currently moving
         if (isMoving) { return; }
 
@@ -90,6 +94,12 @@ public class PlayerController : MonoBehaviour
                 previousAction = PreviousAction.Collect;
                 return false;
             }
+            else if (hitCollider.CompareTag("PotionTable"))
+            {
+                hitCollider.gameObject.GetComponent<PotionTable>().OpenBrewingUI();
+                previousAction = PreviousAction.CreatePotion;
+                return false;
+            }
         }
 
         return true;
@@ -148,6 +158,16 @@ public class PlayerController : MonoBehaviour
         }
 
         return startingPos;
+    }
+
+    public void EnableMovement()
+    {
+        movingEnabled = true;
+    }
+
+    public void DisableMovement()
+    {
+        movingEnabled = false;
     }
 
     public void RegisterOnPlayerFinishMove(Action<Vector2> callbackfunc)
