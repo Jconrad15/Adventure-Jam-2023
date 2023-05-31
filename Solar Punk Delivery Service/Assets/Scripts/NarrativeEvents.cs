@@ -56,52 +56,100 @@ public class NarrativeEvents : MonoBehaviour
         }
     }
 
-    public void RegisterOnGivePotion0(Action callbackfunc)
+    public void RegisterOnGivePotion(Action callbackfunc, int index)
+    {
+        if (index == 0)
+        {
+            RegisterOnGivePotion0(callbackfunc);
+        }
+        else if (index == 1)
+        {
+            RegisterOnGivePotion1(callbackfunc);
+        }
+        else if (index == 2)
+        {
+            RegisterOnGivePotion2(callbackfunc);
+        }
+        else if (index == 3)
+        {
+            RegisterOnGivePotion3(callbackfunc);
+        }
+        else if (index == 4)
+        {
+            RegisterOnGivePotion4(callbackfunc);
+        }
+    }
+
+    public void UnregisterOnGivePotion(Action callbackfunc, int index)
+    {
+        if (index == 0)
+        {
+            UnregisterOnGivePotion0(callbackfunc);
+        }
+        else if (index == 1)
+        {
+            UnregisterOnGivePotion1(callbackfunc);
+        }
+        else if (index == 2)
+        {
+            UnregisterOnGivePotion2(callbackfunc);
+        }
+        else if (index == 3)
+        {
+            UnregisterOnGivePotion3(callbackfunc);
+        }
+        else if (index == 4)
+        {
+            UnregisterOnGivePotion4(callbackfunc);
+        }
+    }
+
+    private void RegisterOnGivePotion0(Action callbackfunc)
     {
         cbOnGivePotion0 += callbackfunc;
     }
 
-    public void UnregisterOnGivePotion0(Action callbackfunc)
+    private void UnregisterOnGivePotion0(Action callbackfunc)
     {
         cbOnGivePotion0 -= callbackfunc;
     }
 
-    public void RegisterOnGivePotion1(Action callbackfunc)
+    private void RegisterOnGivePotion1(Action callbackfunc)
     {
         cbOnGivePotion1 += callbackfunc;
     }
 
-    public void UnregisterOnGivePotion1(Action callbackfunc)
+    private void UnregisterOnGivePotion1(Action callbackfunc)
     {
         cbOnGivePotion1 -= callbackfunc;
     }
 
-    public void RegisterOnGivePotion2(Action callbackfunc)
+    private void RegisterOnGivePotion2(Action callbackfunc)
     {
         cbOnGivePotion2 += callbackfunc;
     }
 
-    public void UnregisterOnGivePotion2(Action callbackfunc)
+    private void UnregisterOnGivePotion2(Action callbackfunc)
     {
         cbOnGivePotion2 -= callbackfunc;
     }
 
-    public void RegisterOnGivePotion3(Action callbackfunc)
+    private void RegisterOnGivePotion3(Action callbackfunc)
     {
         cbOnGivePotion3 += callbackfunc;
     }
 
-    public void UnregisterOnGivePotion3(Action callbackfunc)
+    private void UnregisterOnGivePotion3(Action callbackfunc)
     {
         cbOnGivePotion3 -= callbackfunc;
     }
 
-    public void RegisterOnGivePotion4(Action callbackfunc)
+    private void RegisterOnGivePotion4(Action callbackfunc)
     {
         cbOnGivePotion4 += callbackfunc;
     }
 
-    public void UnregisterOnGivePotion4(Action callbackfunc)
+    private void UnregisterOnGivePotion4(Action callbackfunc)
     {
         cbOnGivePotion4 -= callbackfunc;
     }
