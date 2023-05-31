@@ -7,25 +7,40 @@ public class NPC : MonoBehaviour
     [SerializeField]
     private string characterName;
     [SerializeField]
-    private Dialogue dialogue;
+    private Dialogue normalDialogue;
+    [SerializeField]
+    private Dialogue thankfulDialogue;
     [SerializeField]
     private Color color;
     [SerializeField]
     private Sprite closeUpImage;
-    [SerializeField]
-    private Sprite topDownImage;
     [SerializeField]
     private AudioClip voice;
 
     [SerializeField]
     private Potion requestedPotion;
 
+    private bool receivedPotion = false;
+
     public void Talk()
     {
-        string text = dialogue.GetNextText();
+        // Check if player has the requested potion
+        // if the player does not, play normal dialogue
+        // if the player does, play thankful dialogue
 
-        FindObjectOfType<TextDisplayer>()
-            .ShowDialogue(text, this);
+        string text;
+        if (Inventory.Instance.TryGivePotion(requestedPotion) ||
+            receivedPotion)
+        {
+            receivedPotion = true;
+            text = thankfulDialogue.GetNextText();
+        }
+        else
+        {
+            text = normalDialogue.GetNextText();
+        }
+
+        FindObjectOfType<TextDisplayer>().ShowDialogue(text, this);
     }
 
     public Sprite GetCloseUpImage()

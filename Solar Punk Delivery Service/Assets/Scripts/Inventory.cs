@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
 
@@ -69,12 +70,6 @@ public class Inventory : MonoBehaviour
         return true;
     }
 
-    public bool TryGivePotion(Potion potion)
-    {
-        // TODO
-        return false;
-    }
-
     private bool CheckIfIngredientsAvailable(Potion potion)
     {
         for (int i = 0; i < potion.neededIngredients.Length; i++)
@@ -111,5 +106,17 @@ public class Inventory : MonoBehaviour
     {
         potions[potionID] = null;
         potionGOs[potionID].SetActive(false);
+    }
+
+    public bool TryGivePotion(Potion potionToCheckFor)
+    {
+        bool hasPotion = potions.Contains(potionToCheckFor);
+
+        if (hasPotion)
+        {
+            UsePotion(potionToCheckFor.id);
+        }
+
+        return hasPotion;
     }
 }

@@ -40,6 +40,9 @@ public class TextDisplayer : MonoBehaviour
 
     public void ShowDialogue(string text, NPC npc)
     {
+        // Stop all coroutines incase player triggers talking rapidly
+        StopAllCoroutines();
+
         textBox.SetActive(true);
         npcCloseUpImage.sprite = npc.GetCloseUpImage();
         SetNameArea(npc);

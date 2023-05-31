@@ -1432,16 +1432,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Alice
-  dialogue:
+  normalDialogue:
     text:
     - Hello!
     - Line 2
     - Line 3
+  thankfulDialogue:
+    text:
+    - Thank you for the potion!
+    - This will help me XYZ.
   color: {r: 0.8666667, g: 0.5127203, b: 0.2745098, a: 1}
   closeUpImage: {fileID: 21300000, guid: 45b1e36c6c5e0a4479c11028a375bf26, type: 3}
   topDownImage: {fileID: 21300000, guid: 13984e503c51e2240b7d3948bcfa2633, type: 3}
   voice: {fileID: 0}
-  requestedPotion: {fileID: 0}
+  requestedPotion: {fileID: 11400000, guid: e50bbb4d350815c40b1dade141177795, type: 2}
 --- !u!212 &445217519
 SpriteRenderer:
   m_ObjectHideFlags: 0
