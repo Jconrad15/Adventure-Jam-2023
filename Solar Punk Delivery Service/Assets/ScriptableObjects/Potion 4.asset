@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c555181a2279fe46a4a5fea4e3f0e17, type: 3}
   m_Name: Potion 4
   m_EditorClassIdentifier: 
-  id: 3
+  id: 4
   potionName: potion name
   description: potion description
   neededIngredients:
   - {fileID: 11400000, guid: 394f8b96ce1f83440871b9b8cf72c907, type: 2}
-  - {fileID: 11400000, guid: ad7e2e402a4599a45b1f2e2a20593238, type: 2}
-  image: {fileID: 21300000, guid: 044e187b1cb9ff047a1367f00ef44526, type: 3}
+  image: {fileID: 21300000, guid: 716f990ac215f744a8490bfd828b22fb, type: 3}

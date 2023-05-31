@@ -115,6 +115,8 @@ public class Inventory : MonoBehaviour
         if (hasPotion)
         {
             UsePotion(potionToCheckFor.id);
+            // trigger event 
+            NarrativeEvents.Instance.TriggerGivePotion(potionToCheckFor.id);
         }
 
         return hasPotion;
