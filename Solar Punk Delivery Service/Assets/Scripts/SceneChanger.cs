@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
+    [SerializeField]
+    private Animator transition;
+
     public void LoadMainMenu()
     {
         StartCoroutine(AsyncLoadScene(0));
@@ -23,6 +26,9 @@ public class SceneChanger : MonoBehaviour
 
     private IEnumerator AsyncLoadScene(int sceneNumber)
     {
+        transition.SetTrigger("Start");
+        yield return new WaitForSeconds(1f);
+
         // The Application loads the Scene in the background as the current Scene runs.
         // This is particularly good for creating loading screens.
 
