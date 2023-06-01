@@ -16,6 +16,11 @@ public class SceneChanger : MonoBehaviour
         StartCoroutine(AsyncLoadScene(1));
     }
 
+    public void LoadCredits()
+    {
+        StartCoroutine(AsyncLoadScene(2));
+    }
+
     private IEnumerator AsyncLoadScene(int sceneNumber)
     {
         // The Application loads the Scene in the background as the current Scene runs.

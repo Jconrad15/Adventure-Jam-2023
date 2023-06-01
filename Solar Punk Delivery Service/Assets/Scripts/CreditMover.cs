@@ -8,14 +8,23 @@ public class CreditMover : MonoBehaviour
     private float speed = 1f;
     [SerializeField]
     private float startScrollDelay = 1f;
+    [SerializeField]
+    private float endCreditScreenTime = 35f;
 
     private float timer = 0f;
 
     private void Update()
     {
+        timer += Time.deltaTime;
+
         if (timer < startScrollDelay)
         {
-            timer += Time.deltaTime;
+            return;
+        }
+        else if (timer > endCreditScreenTime)
+        {
+            FindAnyObjectByType<SceneChanger>().LoadMainMenu();
+            Destroy(gameObject);
             return;
         }
 
