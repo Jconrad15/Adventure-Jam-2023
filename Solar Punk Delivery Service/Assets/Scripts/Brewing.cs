@@ -29,6 +29,10 @@ public class Brewing : MonoBehaviour
 
     }
 
+    public Potion[] GetPotions()
+    {
+        return potions;
+    }
 
 
 }
