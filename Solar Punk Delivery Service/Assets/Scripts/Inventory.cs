@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
 
 /// <summary>
 /// Singleton for the player's inventory
@@ -75,24 +74,11 @@ public class Inventory : MonoBehaviour
         for (int i = 0; i < potion.neededIngredients.Length; i++)
         {
             Ingredient ingredient = potion.neededIngredients[i];
-            if (ingredient.id == 0 && ingredients[ingredient.id] == null)
-            {
-                return false;
-            }
-            if (ingredient.id == 1 && ingredients[ingredient.id] == null)
-            {
-                return false;
-            }
-            if (ingredient.id == 2 && ingredients[ingredient.id] == null)
-            {
-                return false;
-            }
-            if (ingredient.id == 3 && ingredients[ingredient.id] == null)
+            if (ingredients[ingredient.id] == null)
             {
                 return false;
             }
         }
-
         return true;
     }
 
