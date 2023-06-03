@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Ingredient 0
   m_EditorClassIdentifier: 
   id: 0
-  ingredientName: ingredient name
-  description: ingredient description
+  ingredientName: Life petal
+  description: Flower petals from the tree of life
   image: {fileID: 21300000, guid: 8c47787076bfb5b4db5b65c07a7cd33c, type: 3}
