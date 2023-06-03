@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Potion 4
   m_EditorClassIdentifier: 
   id: 4
-  potionName: potion name
+  potionName: Purifying Mist
   description: potion description
   neededIngredients:
   - {fileID: 11400000, guid: 394f8b96ce1f83440871b9b8cf72c907, type: 2}

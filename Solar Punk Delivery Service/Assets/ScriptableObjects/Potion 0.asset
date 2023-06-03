@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Potion 0
   m_EditorClassIdentifier: 
   id: 0
-  potionName: potion name
+  potionName: Pan-acea
   description: potion description
   neededIngredients:
   - {fileID: 11400000, guid: dbae5ece71c68b942bf6458c7eb105ea, type: 2}

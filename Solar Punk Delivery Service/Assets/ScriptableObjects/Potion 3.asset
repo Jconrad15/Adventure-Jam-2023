@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Potion 3
   m_EditorClassIdentifier: 
   id: 3
-  potionName: potion name
+  potionName: Elixer of Vibrancy
   description: potion description
   neededIngredients:
   - {fileID: 11400000, guid: 394f8b96ce1f83440871b9b8cf72c907, type: 2}
