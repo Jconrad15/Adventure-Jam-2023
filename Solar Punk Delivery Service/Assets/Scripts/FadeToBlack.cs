@@ -6,7 +6,9 @@ using UnityEngine.UI;
 
 public class FadeToBlack : MonoBehaviour
 {
+    [SerializeField]
     private Image image;
+    [SerializeField]
     private CanvasGroup canvasGroup;
 
     private float fadeFrameCount = 300f;
@@ -14,9 +16,6 @@ public class FadeToBlack : MonoBehaviour
 
     private void Start()
     {
-        image = GetComponentInChildren<Image>();
-        canvasGroup = GetComponentInChildren<CanvasGroup>();
-
         Hide();
     }
 
