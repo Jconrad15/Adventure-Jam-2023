@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Ingredient 11
   m_EditorClassIdentifier: 
   id: 11
-  ingredientName: Gingko leaf
+  ingredientName: Ginkgo leaf
   description: Perfectly symmetrical fan shaped leaf
   image: {fileID: 21300000, guid: 8c47787076bfb5b4db5b65c07a7cd33c, type: 3}
