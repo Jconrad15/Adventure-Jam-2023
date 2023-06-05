@@ -20,7 +20,6 @@ public class PotionRecipeUnlocker : MonoBehaviour
         NarrativeEvents.Instance.RegisterOnGivePotion(OnGivePotion1, 1);
         NarrativeEvents.Instance.RegisterOnGivePotion(OnGivePotion2, 2);
         NarrativeEvents.Instance.RegisterOnGivePotion(OnGivePotion3, 3);
-
     }
 
     private void OnGivePotion1()

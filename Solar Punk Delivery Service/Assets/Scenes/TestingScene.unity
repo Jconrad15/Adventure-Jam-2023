@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 50186635}
   - component: {fileID: 50186636}
   m_Layer: 5
-  m_Name: PotionB
+  m_Name: Potion 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1840,7 +1840,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Potion B
+  m_text: Sun's Embrace
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 207a06f0c88e1b24cae5e3ece1308bc9, type: 2}
   m_sharedMaterial: {fileID: 5593682354555662981, guid: 207a06f0c88e1b24cae5e3ece1308bc9, type: 2}
@@ -1867,8 +1867,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2202,7 +2202,7 @@ GameObject:
   - component: {fileID: 449559589}
   - component: {fileID: 449559590}
   m_Layer: 5
-  m_Name: PotionE
+  m_Name: Potion 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2445,7 +2445,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Potion E
+  m_text: Purifying Mist
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 207a06f0c88e1b24cae5e3ece1308bc9, type: 2}
   m_sharedMaterial: {fileID: 5593682354555662981, guid: 207a06f0c88e1b24cae5e3ece1308bc9, type: 2}
@@ -2472,8 +2472,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3994,7 +3994,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Potion D
+  m_text: Elixir of Vibrancy
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 207a06f0c88e1b24cae5e3ece1308bc9, type: 2}
   m_sharedMaterial: {fileID: 5593682354555662981, guid: 207a06f0c88e1b24cae5e3ece1308bc9, type: 2}
@@ -4021,8 +4021,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5691,6 +5691,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ea8e1b6c349e794898091a4ca98b89a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  potion2: {fileID: 960851627}
+  potion3: {fileID: 1771090829}
+  potion4: {fileID: 449559584}
 --- !u!1 &919095992
 GameObject:
   m_ObjectHideFlags: 0
@@ -5916,7 +5919,7 @@ GameObject:
   - component: {fileID: 960851632}
   - component: {fileID: 960851633}
   m_Layer: 5
-  m_Name: PotionC
+  m_Name: Potion 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6395,7 +6398,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Potion A
+  m_text: Pan-acea
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 207a06f0c88e1b24cae5e3ece1308bc9, type: 2}
   m_sharedMaterial: {fileID: 5593682354555662981, guid: 207a06f0c88e1b24cae5e3ece1308bc9, type: 2}
@@ -6422,8 +6425,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -9719,7 +9722,7 @@ GameObject:
   - component: {fileID: 1527789762}
   - component: {fileID: 1527789763}
   m_Layer: 5
-  m_Name: PotionA
+  m_Name: Potion 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10424,7 +10427,7 @@ GameObject:
   - component: {fileID: 1771090834}
   - component: {fileID: 1771090835}
   m_Layer: 5
-  m_Name: PotionD
+  m_Name: Potion 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10640,7 +10643,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Potion C
+  m_text: Bamp Potion
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 207a06f0c88e1b24cae5e3ece1308bc9, type: 2}
   m_sharedMaterial: {fileID: 5593682354555662981, guid: 207a06f0c88e1b24cae5e3ece1308bc9, type: 2}
@@ -10667,8 +10670,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
