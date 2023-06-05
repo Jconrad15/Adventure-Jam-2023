@@ -8,11 +8,16 @@ using UnityEngine;
 /// </summary>
 public class NarrativeEvents : MonoBehaviour
 {
-    private Action cbOnGivePotion0;
-    private Action cbOnGivePotion1;
-    private Action cbOnGivePotion2;
-    private Action cbOnGivePotion3;
-    private Action cbOnGivePotion4;
+    private Action cbOnSleepAfterGivePotion0;
+    private Action cbOnSleepAfterGivePotion1;
+    private Action cbOnSleepAfterGivePotion2;
+    private Action cbOnSleepAfterGivePotion3;
+    private Action cbOnSleepAfterGivePotion4;
+
+    public bool[] gavePotion;
+    public bool[] triggeredSleepAfterPotion;
+
+    private FadeToBlack fadeToBlack;
 
     public static NarrativeEvents Instance { get; private set; }
     private void Awake()
@@ -28,27 +33,59 @@ public class NarrativeEvents : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        gavePotion = new bool[5];
+        triggeredSleepAfterPotion = new bool[5];
+        fadeToBlack = FindAnyObjectByType<FadeToBlack>();
+    }
+
     public void TriggerGivePotion(int potionID)
+    {
+        gavePotion[potionID] = true;
+    }
+
+    public void TriggerSleep()
+    {
+        // need to check lowest gave potion
+        // corresponding with not having slept yet
+        fadeToBlack.StartFade();
+        for (int i = 0; i < gavePotion.Length; i++)
+        {
+            //Debug.Log("GavePotion " + i + gavePotion[i]);
+            //Debug.Log("triggeredSleepAfterPotion " + i + triggeredSleepAfterPotion[i]);
+
+            if (gavePotion[i] && triggeredSleepAfterPotion[i] == false)
+            {
+                triggeredSleepAfterPotion[i] = true;
+                //Debug.Log("triggeredSleepAfterPotion " + i + triggeredSleepAfterPotion[i]);
+                TriggerSleepAfterGivePotion(i);
+                return;
+            }
+        }
+    }
+
+    private void TriggerSleepAfterGivePotion(int potionID)
     {
         if (potionID == 0)
         {
-            cbOnGivePotion0?.Invoke();
+            cbOnSleepAfterGivePotion0?.Invoke();
         }
         else if (potionID == 1)
         {
-            cbOnGivePotion1?.Invoke();
+            cbOnSleepAfterGivePotion1?.Invoke();
         }
         else if (potionID == 2)
         {
-            cbOnGivePotion2?.Invoke();
+            cbOnSleepAfterGivePotion2?.Invoke();
         }
         else if (potionID == 3)
         {
-            cbOnGivePotion3?.Invoke();
+            cbOnSleepAfterGivePotion3?.Invoke();
         }
         else if (potionID == 4)
         {
-            cbOnGivePotion4?.Invoke();
+            cbOnSleepAfterGivePotion4?.Invoke();
         }
         else
         {
@@ -56,110 +93,111 @@ public class NarrativeEvents : MonoBehaviour
         }
     }
 
-    public void RegisterOnGivePotion(Action callbackfunc, int index)
+    public void RegisterOnSleepAfterGivePotion(
+        Action callbackfunc, int index)
     {
         if (index == 0)
         {
-            RegisterOnGivePotion0(callbackfunc);
+            RegisterOnSleepAfterGivePotion0(callbackfunc);
         }
         else if (index == 1)
         {
-            RegisterOnGivePotion1(callbackfunc);
+            RegisterOnSleepAfterGivePotion1(callbackfunc);
         }
         else if (index == 2)
         {
-            RegisterOnGivePotion2(callbackfunc);
+            RegisterOnSleepAfterGivePotion2(callbackfunc);
         }
         else if (index == 3)
         {
-            RegisterOnGivePotion3(callbackfunc);
+            RegisterOnSleepAfterGivePotion3(callbackfunc);
         }
         else if (index == 4)
         {
-            RegisterOnGivePotion4(callbackfunc);
+            RegisterOnSleepAfterGivePotion4(callbackfunc);
         }
     }
 
-    public void UnregisterOnGivePotion(Action callbackfunc, int index)
+    public void UnregisterOnSleepAfterGivePotion(Action callbackfunc, int index)
     {
         if (index == 0)
         {
-            UnregisterOnGivePotion0(callbackfunc);
+            UnregisterOnSleepAfterGivePotion0(callbackfunc);
         }
         else if (index == 1)
         {
-            UnregisterOnGivePotion1(callbackfunc);
+            UnregisterOnSleepAfterGivePotion1(callbackfunc);
         }
         else if (index == 2)
         {
-            UnregisterOnGivePotion2(callbackfunc);
+            UnregisterOnSleepAfterGivePotion2(callbackfunc);
         }
         else if (index == 3)
         {
-            UnregisterOnGivePotion3(callbackfunc);
+            UnregisterOnSleepAfterGivePotion3(callbackfunc);
         }
         else if (index == 4)
         {
-            UnregisterOnGivePotion4(callbackfunc);
+            UnregisterOnSleepAfterGivePotion4(callbackfunc);
         }
     }
 
     public void RegisterOnAllGivePotion(Action callbackfunc)
     {
-        RegisterOnGivePotion0(callbackfunc);
-        RegisterOnGivePotion1(callbackfunc);
-        RegisterOnGivePotion2(callbackfunc);
-        RegisterOnGivePotion3(callbackfunc);
-        RegisterOnGivePotion4(callbackfunc);
+        RegisterOnSleepAfterGivePotion0(callbackfunc);
+        RegisterOnSleepAfterGivePotion1(callbackfunc);
+        RegisterOnSleepAfterGivePotion2(callbackfunc);
+        RegisterOnSleepAfterGivePotion3(callbackfunc);
+        RegisterOnSleepAfterGivePotion4(callbackfunc);
     }
 
-    private void RegisterOnGivePotion0(Action callbackfunc)
+    private void RegisterOnSleepAfterGivePotion0(Action callbackfunc)
     {
-        cbOnGivePotion0 += callbackfunc;
+        cbOnSleepAfterGivePotion0 += callbackfunc;
     }
 
-    private void UnregisterOnGivePotion0(Action callbackfunc)
+    private void UnregisterOnSleepAfterGivePotion0(Action callbackfunc)
     {
-        cbOnGivePotion0 -= callbackfunc;
+        cbOnSleepAfterGivePotion0 -= callbackfunc;
     }
 
-    private void RegisterOnGivePotion1(Action callbackfunc)
+    private void RegisterOnSleepAfterGivePotion1(Action callbackfunc)
     {
-        cbOnGivePotion1 += callbackfunc;
+        cbOnSleepAfterGivePotion1 += callbackfunc;
     }
 
-    private void UnregisterOnGivePotion1(Action callbackfunc)
+    private void UnregisterOnSleepAfterGivePotion1(Action callbackfunc)
     {
-        cbOnGivePotion1 -= callbackfunc;
+        cbOnSleepAfterGivePotion1 -= callbackfunc;
     }
 
-    private void RegisterOnGivePotion2(Action callbackfunc)
+    private void RegisterOnSleepAfterGivePotion2(Action callbackfunc)
     {
-        cbOnGivePotion2 += callbackfunc;
+        cbOnSleepAfterGivePotion2 += callbackfunc;
     }
 
-    private void UnregisterOnGivePotion2(Action callbackfunc)
+    private void UnregisterOnSleepAfterGivePotion2(Action callbackfunc)
     {
-        cbOnGivePotion2 -= callbackfunc;
+        cbOnSleepAfterGivePotion2 -= callbackfunc;
     }
 
-    private void RegisterOnGivePotion3(Action callbackfunc)
+    private void RegisterOnSleepAfterGivePotion3(Action callbackfunc)
     {
-        cbOnGivePotion3 += callbackfunc;
+        cbOnSleepAfterGivePotion3 += callbackfunc;
     }
 
-    private void UnregisterOnGivePotion3(Action callbackfunc)
+    private void UnregisterOnSleepAfterGivePotion3(Action callbackfunc)
     {
-        cbOnGivePotion3 -= callbackfunc;
+        cbOnSleepAfterGivePotion3 -= callbackfunc;
     }
 
-    private void RegisterOnGivePotion4(Action callbackfunc)
+    private void RegisterOnSleepAfterGivePotion4(Action callbackfunc)
     {
-        cbOnGivePotion4 += callbackfunc;
+        cbOnSleepAfterGivePotion4 += callbackfunc;
     }
 
-    private void UnregisterOnGivePotion4(Action callbackfunc)
+    private void UnregisterOnSleepAfterGivePotion4(Action callbackfunc)
     {
-        cbOnGivePotion4 -= callbackfunc;
+        cbOnSleepAfterGivePotion4 -= callbackfunc;
     }
 }

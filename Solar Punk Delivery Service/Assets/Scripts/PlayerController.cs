@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     private Action<Vector2> cbOnPlayerFinishMove;
     private Action<Vector2> cbOnPlayerStartMove;
 
-    private enum PreviousAction { Move, Talk, Collect, CreatePotion };
+    private enum PreviousAction { Move, Talk, Collect, CreatePotion, Sleep };
 
     private bool movingEnabled = true;
 
@@ -98,6 +98,12 @@ public class PlayerController : MonoBehaviour
             {
                 hitCollider.gameObject.GetComponent<PotionTable>().OpenBrewingUI();
                 previousAction = PreviousAction.CreatePotion;
+                return false;
+            }
+            else if (hitCollider.CompareTag("SleepLocation"))
+            {
+                hitCollider.gameObject.GetComponent<Sleep>().StartSleep();
+                previousAction = PreviousAction.Sleep;
                 return false;
             }
         }

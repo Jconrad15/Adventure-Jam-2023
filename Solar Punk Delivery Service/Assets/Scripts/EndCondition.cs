@@ -13,7 +13,7 @@ public class EndCondition : MonoBehaviour
     private void Start()
     {
         endScreen.SetActive(false);
-        NarrativeEvents.Instance.RegisterOnGivePotion(TriggerEnd, 4);
+        NarrativeEvents.Instance.RegisterOnSleepAfterGivePotion(TriggerEnd, 4);
     }
 
     private void TriggerEnd()

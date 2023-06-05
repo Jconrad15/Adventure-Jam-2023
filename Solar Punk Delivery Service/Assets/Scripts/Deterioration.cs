@@ -17,7 +17,7 @@ public class Deterioration : MonoBehaviour
     {
         sr = GetComponent<SpriteRenderer>();
 
-        NarrativeEvents.Instance.RegisterOnGivePotion(
+        NarrativeEvents.Instance.RegisterOnSleepAfterGivePotion(
             Deteriorate, potionEventNumber);
     }
 

@@ -17,9 +17,9 @@ public class PotionRecipeUnlocker : MonoBehaviour
         potion3.SetActive(false);
         potion4.SetActive(false);
 
-        NarrativeEvents.Instance.RegisterOnGivePotion(OnGivePotion1, 1);
-        NarrativeEvents.Instance.RegisterOnGivePotion(OnGivePotion2, 2);
-        NarrativeEvents.Instance.RegisterOnGivePotion(OnGivePotion3, 3);
+        NarrativeEvents.Instance.RegisterOnSleepAfterGivePotion(OnGivePotion1, 1);
+        NarrativeEvents.Instance.RegisterOnSleepAfterGivePotion(OnGivePotion2, 2);
+        NarrativeEvents.Instance.RegisterOnSleepAfterGivePotion(OnGivePotion3, 3);
     }
 
     private void OnGivePotion1()
