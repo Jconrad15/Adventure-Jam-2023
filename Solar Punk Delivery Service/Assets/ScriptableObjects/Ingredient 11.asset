@@ -15,4 +15,4 @@ MonoBehaviour:
   id: 11
   ingredientName: Ginkgo leaf
   description: Perfectly symmetrical fan shaped leaf
-  image: {fileID: 21300000, guid: 8c47787076bfb5b4db5b65c07a7cd33c, type: 3}
+  image: {fileID: 21300000, guid: f9f7eac9d9b5c3d46887a9d24da3415a, type: 3}

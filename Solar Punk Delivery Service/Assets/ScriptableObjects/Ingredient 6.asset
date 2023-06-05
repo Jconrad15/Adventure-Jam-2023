@@ -15,4 +15,4 @@ MonoBehaviour:
   id: 6
   ingredientName: Magic spring water
   description: No, it's not just water
-  image: {fileID: 21300000, guid: 8c47787076bfb5b4db5b65c07a7cd33c, type: 3}
+  image: {fileID: 21300000, guid: 6723d75fd10958f4b9516e90cb1bc14a, type: 3}
