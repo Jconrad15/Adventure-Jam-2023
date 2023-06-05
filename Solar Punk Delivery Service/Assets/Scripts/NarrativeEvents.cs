@@ -104,6 +104,15 @@ public class NarrativeEvents : MonoBehaviour
         }
     }
 
+    public void RegisterOnAllGivePotion(Action callbackfunc)
+    {
+        RegisterOnGivePotion0(callbackfunc);
+        RegisterOnGivePotion1(callbackfunc);
+        RegisterOnGivePotion2(callbackfunc);
+        RegisterOnGivePotion3(callbackfunc);
+        RegisterOnGivePotion4(callbackfunc);
+    }
+
     private void RegisterOnGivePotion0(Action callbackfunc)
     {
         cbOnGivePotion0 += callbackfunc;
