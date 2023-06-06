@@ -13,8 +13,11 @@ public class PlayerController : MonoBehaviour
 
     private bool isMoving = false;
     [SerializeField]
-    private float speed = 10f;
-    
+    private float speed = 5f;
+
+    private float movementTimer = 0f;
+    private float movementMaxTime = 0.05f;
+
     private PreviousAction previousAction;
 
     private void Update()
@@ -24,34 +27,41 @@ public class PlayerController : MonoBehaviour
 
     private void GetPlayerInput()
     {
+        movementTimer += Time.deltaTime;
+        if (movementTimer < movementMaxTime)
+        {
+            return;
+        }
+        movementTimer = 0f;
+
         if (movingEnabled == false) { return; }
         
         // Don't get new input if currently moving
         if (isMoving) { return; }
 
         bool moved = false;
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKey(KeyCode.W))
         {
             if (TryMove(Direction.North))
             {
                 moved = true;
             }
         }
-        else if (Input.GetKeyDown(KeyCode.S))
+        else if (Input.GetKey(KeyCode.S))
         {
             if (TryMove(Direction.South))
             {
                 moved = true;
             }
         }
-        else if (Input.GetKeyDown(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D))
         {
             if (TryMove(Direction.East))
             {
                 moved = true;
             }
         }
-        else if (Input.GetKeyDown(KeyCode.A))
+        else if (Input.GetKey(KeyCode.A))
         {
             if (TryMove(Direction.West))
             {

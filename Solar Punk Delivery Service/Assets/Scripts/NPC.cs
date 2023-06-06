@@ -22,11 +22,25 @@ public class NPC : MonoBehaviour
 
     private bool receivedPotion = false;
 
+    private float talkTimer = 0f;
+    private readonly float talkMaxTime = 0.5f;
+
+    private void Update()
+    {
+        talkTimer += Time.deltaTime;
+    }
+
     public void Talk()
     {
         // Check if player has the requested potion
         // if the player does not, play normal dialogue
         // if the player does, play thankful dialogue
+
+        if (talkTimer < talkMaxTime)
+        {
+            return;
+        }
+        talkTimer = 0f;
 
         string text;
         if (Inventory.Instance.TryGivePotion(requestedPotion) ||

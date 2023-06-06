@@ -5775,7 +5775,7 @@ MonoBehaviour:
   color: {r: 0.35590956, g: 0.4862507, b: 0.5849056, a: 1}
   closeUpImage: {fileID: 21300000, guid: 45b1e36c6c5e0a4479c11028a375bf26, type: 3}
   voice: {fileID: 0}
-  requestedPotion: {fileID: 11400000, guid: fe06d9b1b89ea754ebf63f6f130fa5e5, type: 2}
+  requestedPotion: {fileID: 11400000, guid: e714dd376c44d01459882ef2596ffc35, type: 2}
 --- !u!1 &908986127
 GameObject:
   m_ObjectHideFlags: 0
@@ -7274,7 +7274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bee5668e56232ba4d9104d4881ace564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 5
 --- !u!1 &1244314008
 GameObject:
   m_ObjectHideFlags: 0
@@ -12517,7 +12517,7 @@ MonoBehaviour:
   color: {r: 0.8207547, g: 0.3987629, b: 0.77054775, a: 1}
   closeUpImage: {fileID: 21300000, guid: 45b1e36c6c5e0a4479c11028a375bf26, type: 3}
   voice: {fileID: 0}
-  requestedPotion: {fileID: 11400000, guid: 24e0508c12241d848befd64229d88272, type: 2}
+  requestedPotion: {fileID: 11400000, guid: 0503b4237265cbe4dacde896baddae92, type: 2}
 --- !u!1 &1612990064
 GameObject:
   m_ObjectHideFlags: 0
