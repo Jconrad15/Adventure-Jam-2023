@@ -15,4 +15,4 @@ MonoBehaviour:
   id: 12
   ingredientName: Red charcoal
   description: 'Helps capture pollutants '
-  image: {fileID: 21300000, guid: 8c47787076bfb5b4db5b65c07a7cd33c, type: 3}
+  image: {fileID: 21300000, guid: dfe566add11061b4c9814f587af56cdb, type: 3}
