@@ -46,12 +46,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Decorations
+    uniqueID: 970709519
+    locked: 0
+  - name: WorldObjects
+    uniqueID: 3299751325
+    locked: 0
   - name: Ingredients
     uniqueID: 571897221
     locked: 0
   - name: Characters
     uniqueID: 911921755
-    locked: 0
-  - name: WorldObjects
-    uniqueID: 3299751325
     locked: 0
