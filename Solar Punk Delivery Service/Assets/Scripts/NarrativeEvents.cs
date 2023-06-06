@@ -14,6 +14,8 @@ public class NarrativeEvents : MonoBehaviour
     private Action cbOnSleepAfterGivePotion3;
     private Action cbOnSleepAfterGivePotion4;
 
+    private Action cbOnGivePotion;
+
     public bool[] gavePotion;
     public bool[] triggeredSleepAfterPotion;
 
@@ -43,6 +45,7 @@ public class NarrativeEvents : MonoBehaviour
     public void TriggerGivePotion(int potionID)
     {
         gavePotion[potionID] = true;
+        cbOnGivePotion?.Invoke();
     }
 
     public void TriggerSleep()
@@ -142,15 +145,6 @@ public class NarrativeEvents : MonoBehaviour
         }
     }
 
-    public void RegisterOnAllGivePotion(Action callbackfunc)
-    {
-        RegisterOnSleepAfterGivePotion0(callbackfunc);
-        RegisterOnSleepAfterGivePotion1(callbackfunc);
-        RegisterOnSleepAfterGivePotion2(callbackfunc);
-        RegisterOnSleepAfterGivePotion3(callbackfunc);
-        RegisterOnSleepAfterGivePotion4(callbackfunc);
-    }
-
     private void RegisterOnSleepAfterGivePotion0(Action callbackfunc)
     {
         cbOnSleepAfterGivePotion0 += callbackfunc;
@@ -199,5 +193,15 @@ public class NarrativeEvents : MonoBehaviour
     private void UnregisterOnSleepAfterGivePotion4(Action callbackfunc)
     {
         cbOnSleepAfterGivePotion4 -= callbackfunc;
+    }
+
+    public void RegisterOnGivePotion(Action callbackfunc)
+    {
+        cbOnGivePotion += callbackfunc;
+    }
+
+    public void UnregisterOnGivePotion(Action callbackfunc)
+    {
+        cbOnGivePotion -= callbackfunc;
     }
 }
