@@ -15,4 +15,4 @@ MonoBehaviour:
   id: 7
   ingredientName: Hyssop root
   description: Purification blessings
-  image: {fileID: 21300000, guid: 8c47787076bfb5b4db5b65c07a7cd33c, type: 3}
+  image: {fileID: 21300000, guid: 85a97e4b299225f44b9f16db77208a8e, type: 3}
