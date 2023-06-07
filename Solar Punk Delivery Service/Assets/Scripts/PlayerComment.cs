@@ -17,6 +17,9 @@ public class PlayerComment : MonoBehaviour
     [TextArea(3, 10)]
     public string onWakeUpText;
 
+    [TextArea(3, 10)]
+    public string onStartGame;
+
     private readonly float showTextTimeLength = 4f;
 
     private void Start()
@@ -25,6 +28,13 @@ public class PlayerComment : MonoBehaviour
         NarrativeEvents.Instance.RegisterOnGivePotion(OnGivePotion);
 
         FindAnyObjectByType<FadeToBlack>().RegisterOnWakeUp(OnWakeUp);
+
+        OnStartGame();
+    }
+
+    private void OnStartGame()
+    {
+        StartCoroutine(ShowText(onStartGame, 2f));
     }
 
     private void OnGivePotion()
