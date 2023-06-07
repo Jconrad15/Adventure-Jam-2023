@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 3
   potionName: Elixir of Vibrancy
-  description: potion description
+  description: This is an elixir of vibrancy
   neededIngredients:
   - {fileID: 11400000, guid: 6145b4d63fde8cb42ad16ecd5df41a34, type: 2}
   - {fileID: 11400000, guid: 67ad6cdc39081bd42964bba7056402f2, type: 2}

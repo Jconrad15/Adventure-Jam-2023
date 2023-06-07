@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   potionName: Sun's Embrace
-  description: potion description
+  description: This is a sun's embrace
   neededIngredients:
   - {fileID: 11400000, guid: 394f8b96ce1f83440871b9b8cf72c907, type: 2}
   - {fileID: 11400000, guid: ad7e2e402a4599a45b1f2e2a20593238, type: 2}

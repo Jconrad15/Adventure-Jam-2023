@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 4
   potionName: Purifying Mist
-  description: potion description
+  description: This is a purifying mist
   neededIngredients:
   - {fileID: 11400000, guid: f1d2466c4495c73469310a14fafc6341, type: 2}
   - {fileID: 11400000, guid: 4cc47cfb3d24c35448230a72cefcc8d9, type: 2}
