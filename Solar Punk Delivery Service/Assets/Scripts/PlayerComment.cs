@@ -20,6 +20,9 @@ public class PlayerComment : MonoBehaviour
     [TextArea(3, 10)]
     public string onStartGame;
 
+    [TextArea(3, 10)]
+    public string onDetectIngredient;
+
     private readonly float showTextTimeLength = 4f;
 
     private void Start()
@@ -27,7 +30,10 @@ public class PlayerComment : MonoBehaviour
         playerComments.SetActive(false);
         NarrativeEvents.Instance.RegisterOnGivePotion(OnGivePotion);
 
-        FindAnyObjectByType<FadeToBlack>().RegisterOnWakeUp(OnWakeUp);
+        FindAnyObjectByType<FadeToBlack>()
+            .RegisterOnWakeUp(OnWakeUp);
+        FindAnyObjectByType<IngredientDetector>()
+            .RegisterOnIngredientDetected(OnIngredientDetected);
 
         OnStartGame();
     }
@@ -35,6 +41,11 @@ public class PlayerComment : MonoBehaviour
     private void OnStartGame()
     {
         StartCoroutine(ShowText(onStartGame, 2f));
+    }
+    
+    private void OnIngredientDetected()
+    {
+        StartCoroutine(ShowText(onDetectIngredient, 0.2f));
     }
 
     private void OnGivePotion()
