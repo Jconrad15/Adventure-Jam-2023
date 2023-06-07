@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,8 @@ public class FadeToBlack : MonoBehaviour
 
     private float fadeFrameCount = 300f;
     private float holdBlackFrameCount = 600f;
+
+    private Action cbOnWakeUp;
 
     private void Start()
     {
@@ -65,7 +68,16 @@ public class FadeToBlack : MonoBehaviour
         Hide();
 
         pc.EnableMovement();
+        cbOnWakeUp?.Invoke();
     }
 
+    public void RegisterOnWakeUp(Action callbackfunc)
+    {
+        cbOnWakeUp += callbackfunc;
+    }
 
+    public void UnregisterOnWakeUp(Action callbackfunc)
+    {
+        cbOnWakeUp -= callbackfunc;
+    }
 }

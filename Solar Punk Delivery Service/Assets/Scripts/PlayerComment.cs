@@ -14,23 +14,32 @@ public class PlayerComment : MonoBehaviour
     [TextArea(3, 10)]
     public string onGivePotionText;
 
+    [TextArea(3, 10)]
+    public string onWakeUpText;
+
     private readonly float showTextTimeLength = 4f;
-    private readonly float showTimeDelay = 4f;
 
     private void Start()
     {
         playerComments.SetActive(false);
         NarrativeEvents.Instance.RegisterOnGivePotion(OnGivePotion);
+
+        FindAnyObjectByType<FadeToBlack>().RegisterOnWakeUp(OnWakeUp);
     }
 
     private void OnGivePotion()
     {
-        StartCoroutine(ShowText(onGivePotionText));
+        StartCoroutine(ShowText(onGivePotionText, 6f));
     }
 
-    private IEnumerator ShowText(string text)
+    private void OnWakeUp()
     {
-        yield return new WaitForSeconds(showTimeDelay);
+        StartCoroutine(ShowText(onWakeUpText, 0.75f));
+    }
+
+    private IEnumerator ShowText(string text, float timeDelay)
+    {
+        yield return new WaitForSeconds(timeDelay);
 
         playerComments.SetActive(true);
         commentText.SetText(text);
