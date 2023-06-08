@@ -15,4 +15,4 @@ MonoBehaviour:
   id: 9
   ingredientName: Ancient coffee bean
   description: This coffee bean is one million years old
-  image: {fileID: 21300000, guid: 8c47787076bfb5b4db5b65c07a7cd33c, type: 3}
+  image: {fileID: 21300000, guid: 55e53dbf66da56c4f8d0c2d050f1d391, type: 3}
