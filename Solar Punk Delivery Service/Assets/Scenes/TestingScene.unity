@@ -8617,8 +8617,8 @@ MonoBehaviour:
   potions:
   - {fileID: 11400000, guid: e50bbb4d350815c40b1dade141177795, type: 2}
   - {fileID: 11400000, guid: a55588486e648f04abe3128be68eb86d, type: 2}
-  - {fileID: 11400000, guid: fe06d9b1b89ea754ebf63f6f130fa5e5, type: 2}
-  - {fileID: 11400000, guid: 24e0508c12241d848befd64229d88272, type: 2}
+  - {fileID: 11400000, guid: e714dd376c44d01459882ef2596ffc35, type: 2}
+  - {fileID: 11400000, guid: 0503b4237265cbe4dacde896baddae92, type: 2}
   - {fileID: 11400000, guid: 500fcb670df6509428666069ef258208, type: 2}
 --- !u!114 &908986132
 MonoBehaviour:
@@ -11022,7 +11022,7 @@ MonoBehaviour:
   playerComments: {fileID: 1639106146}
   onGivePotionText: I should go rest...
   onWakeUpText: Good morning!
-  onStartGame: Let's check my brew
+  onStartGame: Let's check my recipes
   onDetectIngredient: An ingredient is nearby
 --- !u!1 &1337011814
 GameObject:
