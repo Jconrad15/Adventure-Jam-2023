@@ -3964,7 +3964,7 @@ SpriteRenderer:
   m_SortingLayerID: 911921755
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 13984e503c51e2240b7d3948bcfa2633, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 44433ed733bdf4844bd0e02b5127c55c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3997,7 +3997,7 @@ MonoBehaviour:
     text:
     - Thank you for the potion!
     - This will help me XYZ.
-  color: {r: 0.24422789, g: 0.509434, b: 0.16580634, a: 1}
+  color: {r: 0.9921569, g: 0.75294125, b: 0, a: 1}
   closeUpImage: {fileID: 21300000, guid: 45b1e36c6c5e0a4479c11028a375bf26, type: 3}
   voice: {fileID: 0}
   requestedPotion: {fileID: 11400000, guid: a55588486e648f04abe3128be68eb86d, type: 2}
@@ -24020,7 +24020,7 @@ SpriteRenderer:
   m_SortingLayerID: 911921755
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 13984e503c51e2240b7d3948bcfa2633, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 962851f93840d224d8732b2984967ecd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -24053,7 +24053,7 @@ MonoBehaviour:
     text:
     - Thank you for the potion!
     - This will help me XYZ.
-  color: {r: 0.8207547, g: 0.3987629, b: 0.77054775, a: 1}
+  color: {r: 0.2627451, g: 0.19215688, b: 0.27058825, a: 1}
   closeUpImage: {fileID: 21300000, guid: 45b1e36c6c5e0a4479c11028a375bf26, type: 3}
   voice: {fileID: 0}
   requestedPotion: {fileID: 11400000, guid: 0503b4237265cbe4dacde896baddae92, type: 2}
