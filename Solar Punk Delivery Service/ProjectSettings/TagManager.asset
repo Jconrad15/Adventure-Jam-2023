@@ -58,3 +58,6 @@ TagManager:
   - name: Characters
     uniqueID: 911921755
     locked: 0
+  - name: In front of player
+    uniqueID: 1208464717
+    locked: 0
