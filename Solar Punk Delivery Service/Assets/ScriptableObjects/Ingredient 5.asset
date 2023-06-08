@@ -15,4 +15,4 @@ MonoBehaviour:
   id: 5
   ingredientName: Undisturbed forest soil
   description: Natural and clean dirt
-  image: {fileID: 21300000, guid: 8c47787076bfb5b4db5b65c07a7cd33c, type: 3}
+  image: {fileID: 21300000, guid: 7bc77d07dbcb86e43aa070b5e964855a, type: 3}

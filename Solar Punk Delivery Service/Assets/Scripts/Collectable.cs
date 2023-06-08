@@ -9,7 +9,7 @@ public class Collectable : MonoBehaviour
 
     private void Start()
     {
-        GetComponent<SpriteRenderer>().sprite = ingredient.image;
+        //GetComponent<SpriteRenderer>().sprite = ingredient.image;
     }
 
     public void Collect()
