@@ -1737,7 +1737,7 @@ GameObject:
   - component: {fileID: 210555712}
   - component: {fileID: 210555711}
   m_Layer: 5
-  m_Name: potion (2)
+  m_Name: potion 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3301,7 +3301,7 @@ GameObject:
   - component: {fileID: 367419059}
   - component: {fileID: 367419058}
   m_Layer: 5
-  m_Name: potion (1)
+  m_Name: potion 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4083,7 +4083,7 @@ SpriteRenderer:
   m_SortingLayerID: 911921755
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 13984e503c51e2240b7d3948bcfa2633, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 32e650afa06d531428a9cd95552ce568, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5039,7 +5039,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Potion E
+  m_text: Purifying Mist Potion
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 207a06f0c88e1b24cae5e3ece1308bc9, type: 2}
   m_sharedMaterial: {fileID: 5593682354555662981, guid: 207a06f0c88e1b24cae5e3ece1308bc9, type: 2}
@@ -5709,7 +5709,7 @@ GameObject:
   - component: {fileID: 608035055}
   - component: {fileID: 608035054}
   m_Layer: 5
-  m_Name: potion (4)
+  m_Name: potion 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5755,7 +5755,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 044e187b1cb9ff047a1367f00ef44526, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a84555ee045f0dd488bb3d34c9a7cdee, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5831,7 +5831,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Potion A
+  m_text: Pan-acea
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 207a06f0c88e1b24cae5e3ece1308bc9, type: 2}
   m_sharedMaterial: {fileID: 5593682354555662981, guid: 207a06f0c88e1b24cae5e3ece1308bc9, type: 2}
@@ -6208,7 +6208,7 @@ GameObject:
   - component: {fileID: 631841209}
   - component: {fileID: 631841208}
   m_Layer: 5
-  m_Name: potion (5)
+  m_Name: potion 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6254,7 +6254,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 716f990ac215f744a8490bfd828b22fb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e5dc720c8da3ac34b8cc2372fa2f81cf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7082,7 +7082,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 716f990ac215f744a8490bfd828b22fb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e5dc720c8da3ac34b8cc2372fa2f81cf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7324,7 +7324,7 @@ GameObject:
   - component: {fileID: 765870155}
   - component: {fileID: 765870156}
   m_Layer: 5
-  m_Name: Potion A description
+  m_Name: Potion 0 description
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7770,7 +7770,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 044e187b1cb9ff047a1367f00ef44526, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a84555ee045f0dd488bb3d34c9a7cdee, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8252,7 +8252,7 @@ GameObject:
   - component: {fileID: 887794904}
   - component: {fileID: 887794903}
   m_Layer: 5
-  m_Name: potion (3)
+  m_Name: potion 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8298,7 +8298,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 16faac19fd1357847aa939d0c4ed82ca, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 448dc0c1b00785041afbaebbbdef27df, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -21949,7 +21949,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Potion D
+  m_text: Elixir of Vibrancy Potion
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 207a06f0c88e1b24cae5e3ece1308bc9, type: 2}
   m_sharedMaterial: {fileID: 5593682354555662981, guid: 207a06f0c88e1b24cae5e3ece1308bc9, type: 2}
@@ -22559,7 +22559,7 @@ GameObject:
   - component: {fileID: 1414152941}
   - component: {fileID: 1414152942}
   m_Layer: 5
-  m_Name: Potion D description
+  m_Name: Potion 3 description
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24132,7 +24132,7 @@ GameObject:
   - component: {fileID: 1541511529}
   - component: {fileID: 1541511530}
   m_Layer: 5
-  m_Name: Potion B description
+  m_Name: Potion 1 description
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24405,7 +24405,7 @@ GameObject:
   - component: {fileID: 1558113289}
   - component: {fileID: 1558113290}
   m_Layer: 5
-  m_Name: Potion E description
+  m_Name: Potion 4 description
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27393,7 +27393,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 16faac19fd1357847aa939d0c4ed82ca, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 448dc0c1b00785041afbaebbbdef27df, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -27601,7 +27601,7 @@ GameObject:
   - component: {fileID: 2024925913}
   - component: {fileID: 2024925914}
   m_Layer: 5
-  m_Name: Potion C description
+  m_Name: Potion 2 description
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58237,7 +58237,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Potion B
+  m_text: Sun's Embrace
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 207a06f0c88e1b24cae5e3ece1308bc9, type: 2}
   m_sharedMaterial: {fileID: 5593682354555662981, guid: 207a06f0c88e1b24cae5e3ece1308bc9, type: 2}
@@ -58498,7 +58498,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Potion C
+  m_text: Bamp Potion
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 207a06f0c88e1b24cae5e3ece1308bc9, type: 2}
   m_sharedMaterial: {fileID: 5593682354555662981, guid: 207a06f0c88e1b24cae5e3ece1308bc9, type: 2}
