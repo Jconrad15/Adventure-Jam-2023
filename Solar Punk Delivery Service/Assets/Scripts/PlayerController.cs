@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     private Action<Vector2> cbOnPlayerFinishMove;
     private Action<Vector2> cbOnPlayerStartMove;
+    private Action cbOnPlayerCannotMove;
 
     private Animator animator;
 
@@ -101,6 +102,7 @@ public class PlayerController : MonoBehaviour
         {
             if (hitCollider.CompareTag("Colliders"))
             {
+                cbOnPlayerCannotMove?.Invoke();
                 return false;
             }
             else if (hitCollider.CompareTag("NPC"))
@@ -134,7 +136,10 @@ public class PlayerController : MonoBehaviour
 
     private bool TryMove(Direction d)
     {
-        if (IsLocationOpen(d) == false) { return false; }
+        if (IsLocationOpen(d) == false)
+        {
+            return false;
+        }
 
         Vector3 targetPos = GetNeighborPosition(d, transform.position);
         cbOnPlayerStartMove?.Invoke(targetPos);
@@ -215,5 +220,15 @@ public class PlayerController : MonoBehaviour
     public void UnregisterOnPlayerStartMove(Action<Vector2> callbackfunc)
     {
         cbOnPlayerStartMove -= callbackfunc;
+    }
+
+    public void RegisterOnPlayerCannotMove(Action callbackfunc)
+    {
+        cbOnPlayerCannotMove += callbackfunc;
+    }
+
+    public void UnregisterOnPlayerCannotMove(Action callbackfunc)
+    {
+        cbOnPlayerCannotMove -= callbackfunc;
     }
 }

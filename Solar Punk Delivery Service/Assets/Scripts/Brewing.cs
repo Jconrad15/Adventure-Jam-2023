@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,8 @@ public class Brewing : MonoBehaviour
     [SerializeField]
     private Animator animator;
 
+    private Action cbOnBrewPotion;
+
     private void Start()
     {
         tabs = GetComponent<CookingTabs>();
@@ -25,6 +28,7 @@ public class Brewing : MonoBehaviour
         {
             Debug.Log("Brewed id " + potionID);
             animator.SetTrigger("StartBrew");
+            cbOnBrewPotion?.Invoke();
         }
         else
         {
@@ -38,5 +42,14 @@ public class Brewing : MonoBehaviour
         return potions;
     }
 
+    public void RegisterOnBrewPotion(Action callbackfunc)
+    {
+        cbOnBrewPotion += callbackfunc;
+    }
+
+    public void UnregisterOnBrewPotion(Action callbackfunc)
+    {
+        cbOnBrewPotion -= callbackfunc;
+    }
 
 }
