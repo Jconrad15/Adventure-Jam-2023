@@ -49,13 +49,14 @@ MonoBehaviour:
   characterName: Dr. Lily Evergreen
   normalDialogue:
     text:
-    - Hello!
-    - Line 2
-    - Can I have a potion 4?
+    - Shush! Don't let them hear.
+    - I've been trying to help these people, but my equipment generates too much
+      pollution.
+    - I heard about your potions. I need your help, so that I can help the community.
   thankfulDialogue:
     text:
-    - Thank you for the potion!
-    - This will help me XYZ.
+    - Now I can help keep everyone healthy, but not pollute the air.
+    - I'll make sure to help everyone that I can.
   color: {r: 0.5250844, g: 0.2745098, b: 0.8666667, a: 1}
   closeUpImage: {fileID: 21300000, guid: 45b1e36c6c5e0a4479c11028a375bf26, type: 3}
   voice: {fileID: 0}
