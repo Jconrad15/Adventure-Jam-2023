@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     private Action<Vector2> cbOnPlayerFinishMove;
     private Action<Vector2> cbOnPlayerStartMove;
 
+    private Animator animator;
+
     private enum PreviousAction { Move, Talk, Collect, CreatePotion, Sleep };
 
     private bool movingEnabled = true;
@@ -19,6 +21,11 @@ public class PlayerController : MonoBehaviour
     private float movementMaxTime = 0.05f;
 
     private PreviousAction previousAction;
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     private void Update()
     {
@@ -45,6 +52,7 @@ public class PlayerController : MonoBehaviour
             if (TryMove(Direction.North))
             {
                 moved = true;
+                animator.SetTrigger("North");
             }
         }
         else if (Input.GetKey(KeyCode.S))
@@ -52,6 +60,7 @@ public class PlayerController : MonoBehaviour
             if (TryMove(Direction.South))
             {
                 moved = true;
+                animator.SetTrigger("South");
             }
         }
         else if (Input.GetKey(KeyCode.D))
@@ -59,6 +68,7 @@ public class PlayerController : MonoBehaviour
             if (TryMove(Direction.East))
             {
                 moved = true;
+                animator.SetTrigger("East");
             }
         }
         else if (Input.GetKey(KeyCode.A))
@@ -66,6 +76,7 @@ public class PlayerController : MonoBehaviour
             if (TryMove(Direction.West))
             {
                 moved = true;
+                animator.SetTrigger("West");
             }
         }
 
