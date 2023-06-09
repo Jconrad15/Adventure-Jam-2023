@@ -9,6 +9,9 @@ public class Brewing : MonoBehaviour
     [SerializeField]
     private Potion[] potions;
 
+    [SerializeField]
+    private Animator animator;
+
     private void Start()
     {
         tabs = GetComponent<CookingTabs>();
@@ -21,6 +24,7 @@ public class Brewing : MonoBehaviour
         if (Inventory.Instance.TryBrewPotion(potions[potionID]))
         {
             Debug.Log("Brewed id " + potionID);
+            animator.SetTrigger("StartBrew");
         }
         else
         {
