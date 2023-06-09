@@ -789,7 +789,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Dorthy, Jake
+  m_text: Dorthy, Marcy, Jake
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 207a06f0c88e1b24cae5e3ece1308bc9, type: 2}
   m_sharedMaterial: {fileID: 5593682354555662981, guid: 207a06f0c88e1b24cae5e3ece1308bc9, type: 2}
