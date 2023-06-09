@@ -2521,7 +2521,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 7
-      m_TileSpriteIndex: 14
+      m_TileSpriteIndex: 15
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -2600,10 +2600,10 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 1
-    m_Data: {fileID: 1051320540, guid: 45a691b59cdc7a740a67465398912dd6, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 1051320540, guid: 45a691b59cdc7a740a67465398912dd6, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: e8cf0b09719ca4f449af8978d2781ff2, type: 3}
   - m_RefCount: 3
@@ -4040,7 +4040,7 @@ MonoBehaviour:
     text:
     - Thank you for the potion!
     - This will help me XYZ.
-  color: {r: 0.8962264, g: 0.7429795, b: 0.21560161, a: 1}
+  color: {r: 0.82745105, g: 0.5921569, b: 0.2509804, a: 1}
   closeUpImage: {fileID: 21300000, guid: 45b1e36c6c5e0a4479c11028a375bf26, type: 3}
   voice: {fileID: 0}
   requestedPotion: {fileID: 11400000, guid: e50bbb4d350815c40b1dade141177795, type: 2}
@@ -8818,7 +8818,7 @@ SpriteRenderer:
   m_SortingLayerID: 911921755
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 13984e503c51e2240b7d3948bcfa2633, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2a46d3661c2b11a4aadabbd4ed0abecd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8851,7 +8851,7 @@ MonoBehaviour:
     text:
     - Thank you for the potion!
     - This will help me XYZ.
-  color: {r: 0.35590956, g: 0.4862507, b: 0.5849056, a: 1}
+  color: {r: 0.121568635, g: 0.22352943, b: 0.30588236, a: 1}
   closeUpImage: {fileID: 21300000, guid: 45b1e36c6c5e0a4479c11028a375bf26, type: 3}
   voice: {fileID: 0}
   requestedPotion: {fileID: 11400000, guid: e714dd376c44d01459882ef2596ffc35, type: 2}
