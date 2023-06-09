@@ -12,6 +12,9 @@ public class SoundController : MonoBehaviour
     [SerializeField]
     private AudioClip successSound;
 
+    [SerializeField]
+    private Brewing brewing;
+
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -19,8 +22,7 @@ public class SoundController : MonoBehaviour
         FindAnyObjectByType<PlayerController>()
             .RegisterOnPlayerCannotMove(OnPlayerCannotMove);
 
-        FindAnyObjectByType<Brewing>()
-            .RegisterOnBrewPotion(OnBrewPotion);
+        brewing.RegisterOnBrewPotion(OnBrewPotion);
     }
 
     private void OnPlayerCannotMove()
