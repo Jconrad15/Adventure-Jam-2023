@@ -11,8 +11,8 @@ public class FadeToBlack : MonoBehaviour
     [SerializeField]
     private CanvasGroup canvasGroup;
 
-    private float fadeFrameCount = 300f;
-    private float holdBlackFrameCount = 600f;
+    private float fadeWaitCount = 300f;
+    private float holdBlackWaitCount = 600f;
 
     private Action cbOnWakeUp;
 
@@ -42,27 +42,27 @@ public class FadeToBlack : MonoBehaviour
 
         image.gameObject.SetActive(true);
 
-        for (int i = 0; i < fadeFrameCount; i++)
+        for (int i = 0; i < fadeWaitCount; i++)
         {
-            float t = i / fadeFrameCount;
+            float t = i / fadeWaitCount;
             float alpha = Mathf.Lerp(0, 1, t);
 
             canvasGroup.alpha = alpha;
-            yield return new WaitForEndOfFrame();
+            yield return new WaitForSeconds(0.001f);
         }
 
-        for (int i = 0; i < holdBlackFrameCount; i++)
+        for (int i = 0; i < holdBlackWaitCount; i++)
         {
-            yield return new WaitForEndOfFrame();
+            yield return new WaitForSeconds(0.001f);
         }
 
-        for (int i = 0; i < fadeFrameCount; i++)
+        for (int i = 0; i < fadeWaitCount; i++)
         {
-            float t = i / fadeFrameCount;
+            float t = i / fadeWaitCount;
             float alpha = Mathf.Lerp(1, 0, t);
 
             canvasGroup.alpha = alpha;
-            yield return new WaitForEndOfFrame();
+            yield return new WaitForSeconds(0.001f);
         }
 
         Hide();
