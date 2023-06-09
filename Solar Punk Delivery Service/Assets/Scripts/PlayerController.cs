@@ -15,8 +15,7 @@ public class PlayerController : MonoBehaviour
     private bool movingEnabled = true;
 
     private bool isMoving = false;
-    [SerializeField]
-    private float speed = 5f;
+    private float speed = 3f;
 
     private float movementTimer = 0f;
     private float movementMaxTime = 0.05f;

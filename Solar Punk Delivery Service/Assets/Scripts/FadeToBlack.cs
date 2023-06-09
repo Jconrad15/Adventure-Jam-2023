@@ -11,8 +11,8 @@ public class FadeToBlack : MonoBehaviour
     [SerializeField]
     private CanvasGroup canvasGroup;
 
-    private float fadeWaitCount = 300f;
-    private float holdBlackWaitCount = 600f;
+    private float fadeWaitCount = 50f;
+    private float holdBlackWaitCount = 100f;
 
     private Action cbOnWakeUp;
 

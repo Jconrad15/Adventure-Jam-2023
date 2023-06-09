@@ -7,7 +7,7 @@ public class Companion : MonoBehaviour
     private PlayerController playerController;
     private Vector2 previousPlayerPosition;
 
-    private float speed = 5f;
+    private float speed = 3f;
 
     private void Start()
     {
